@@ -19,7 +19,9 @@
       <div class="nav-bar">
         <nav class="navbar background">
           <h2>{{room}} Chart Room</h2><br>
-          <p>Welcome {{username}} and say something</p>
+          {{username}} say something 
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="{% url 'logout' %}">Logout</a>
         </nav>
     </div>
     <section class="scroller">
@@ -39,7 +41,7 @@
                     $("#display").empty();
                     for (var key in response.messages.reverse())
                     {
-                        var temp="<div class='container darker'><b><u>@"+response.messages[key].user+"</b></u><p>"+response.messages[key].value+"</p><span class='time-left'>"+response.messages[key].date+"</span></div>";
+                        var temp="<div class='container darker'><h3 class='username'><b><u><i>@"+response.messages[key].user+"</h3></b></u></i><p>"+response.messages[key].value+"</p><span class='time-left'>"+response.messages[key].date+"</span></div>";
                         $("#display").append(temp);
                     }
                 },

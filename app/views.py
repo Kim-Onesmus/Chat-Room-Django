@@ -8,6 +8,12 @@ from django.http import HttpResponse, JsonResponse
 def Home(request):
     return render(request, 'app/home.html')
 
+def Logout(request):
+    if request.method == 'POST':
+        auth.logout(request)
+        return redirect('/')
+    return render(request, 'app/home.html')
+
 def RooM(request, room):
     username = request.GET.get('username')
     room_details = Room.objects.get(name=room)
