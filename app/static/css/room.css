@@ -1,24 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
 body {
     margin: 0 auto;
     max-width: 800px;
     padding: 0 20px;
     background-color: bisque;
   }
-  h2 {
+  .navbar {
+    display: inline-block;
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    top: 0px;
+    cursor: pointer;
     text-align: center;
-  }
+}
+.background {
+  background-color: dodgerblue;
+  height: 70px;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+}
+.scroller {
+  margin-top: 80px;
+}
   .container {
-    border-radius: 5px;
+    border-radius: 90px;
     padding: 10px;
     margin: 10px 0;
   }
   
   .darker {
-    width: 800px;
-    position: fixed;
-    top: 50px;
+    padding: 20px;
     border-color: #ccc;
     background-color: white;
+    margin: 10px;
   }
   
   .container::after {
@@ -27,7 +47,7 @@ body {
     display: table;
   }
   
-  .container img {
+  /* .container img {
     float: left;
     max-width: 60px;
     width: 100%;
@@ -39,24 +59,25 @@ body {
     float: right;
     margin-left: 20px;
     margin-right:0;
-  }
+  } */
   
   .time-right {
     float: right;
-    color: #aaa;
+    color: green;
   }
   
   .time-left {
     float: left;
-    color: #999;
+    color: green;
   }
   input[type=text] {
-    width: 50%;
+    width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
     display: inline-block;
     border-radius: 4px;
     box-sizing: border-box;
+    position: fixed;
     }
 
     input[type=submit] {
@@ -68,18 +89,40 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    display: inline-flex;
-    text-align: center;
+    }
+    #post-form {
+      margin: 0% auto;
+      position: fixed;
+      bottom: 0px;
+      right: 10%;
+      left: 10%;
+      max-width: 800px;
+      background-color: gray;
+      padding: 3px;
+      border-radius: 5px;
     }
 
     input[type=submit]:hover {
     background-color: #45a049;
     }
+    /* .scroller {
+      overflow: auto;
+      height: 100%;
+      max-height: 20em;
+      background: white;
+      }
 
-    #post-form {
-      background-color: white;
-      border: 1px solid #ccc;
-      width: 800px;
-      position: fixed;
-      bottom: 10px;
-    }
+      .messages > * {
+      overflow-anchor: none;
+      }
+
+      #post-form {
+      overflow-anchor: auto;
+      height: 1px;
+      }
+
+      .message {
+      margin: .3em;
+      padding: .5em;
+      background: #eee;
+      } */
