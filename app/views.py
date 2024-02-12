@@ -25,11 +25,11 @@ def Checkview(request):
     username = request.POST['username']
     
     if Room.objects.filter(name=room).exists():
-        return redirect('/'+room1+'/?username='+username)
+        return redirect('/'+room+'/?username='+username)
     else:
         new_room = Room.objects.create(name=room)
         new_room.save()
-        return redirect('/'+room1+'/?username='+username)
+        return redirect('/'+room+'/?username='+username)
     
 def Send(request):
     message = request.POST['message']
