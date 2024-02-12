@@ -48,4 +48,8 @@ def getMessages(request, room):
 
 
 def Room1(request):
+    username = request.GET.get('username')
+    room_details = Room.objects.get(name=room)
+    context = {'username':username, 'room':room, 'room_details':room_details}
+    return render(request, 'app/room.html', context)
     return render(request, 'app/room1.html')

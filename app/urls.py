@@ -8,5 +8,5 @@ urlpatterns = [
     path('checkview', views.Checkview, name='checkview'),
     path('send', views.Send, name='send'),
     path('getMessages/<str:room>/', views.getMessages, name='getMessages'),
-    path('room1', views.Room1, name='room1')
+    path('<str:room1>/', views.Room1, name='room1')
 ]
