@@ -45,3 +45,7 @@ def getMessages(request, room):
     
     messages = Messange.objects.filter(room=room_details.id)
     return JsonResponse({"messages":list(messages.values())})
+
+
+def Room1(request):
+    return render(request, 'app/room1.html')

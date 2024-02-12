@@ -1,0 +1,121 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart Room</title>
+    <!-- <link rel="stylesheet" href="{% static 'css/room.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'css/emoji.css' %}">
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+        integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous">
+        </script>
+    <script src="{% static 'js/emoji.js' %}"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'assets/css/style.css' %}">
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="page-wrapper">
+            <div class="chat-main-row">
+                <div class="chat-main-wrapper">
+                    <div class="col-lg-9 message-view chat-view">
+                        <div class="chat-window">
+                            <div class="fixed-header">
+                                <div class="navbar">
+                                    <div class="user-details mr-auto">
+                                        <div class="float-left user-img m-r-10">
+                                            <a href="profile.html" title="Jennifer Robinson"><img
+                                                    src="{{user.student.profile.profile_photo.url}}" alt=""
+                                                    class="w-40 rounded-circle"><span class="status online"></span></a>
+                                        </div>
+                                        <div class="user-info float-left">
+                                            <a href="profile.html"><span class="font-bold">{{user.username}}</span> <i
+                                                    class="typing-text">Typing...</i></a>
+                                            <span class="last-seen">Last seen today at 7:50 AM</span>
+                                        </div>
+                                    </div>
+                                    <div class="search-box">
+                                        <div class="input-group input-group-sm">
+                                            <input type="text" class="form-control" placeholder="Search">
+                                            <span class="input-group-append">
+                                                <button class="btn" type="button"><i class="fa fa-search"></i></button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-contents">
+                                <div class="chat-content-wrap">
+                                    <div class="chat-wrap-inner">
+                                        <div class="chat-box">
+                                            <div class="chats">
+                                                <div class="chat chat-right">
+                                                    <div class="chat-body">
+                                                        <div class="chat-bubble">
+                                                            <div class="chat-content">
+                                                                <ul class="attach-list">
+                                                                    <li class="pdf-file"><i
+                                                                            class="fa fa-file-pdf-o"></i> <a
+                                                                            href="#">Document_2016.pdf</a></li>
+                                                                </ul>
+                                                                <span class="chat-time">9:00 am</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="chat chat-left">
+                                                    <div class="chat-avatar">
+                                                        <a href="profile.html" class="avatar">
+                                                            <img alt="Jennifer Robinson"
+                                                                src="assets/img/patient-thumb-02.jpg"
+                                                                class="img-fluid rounded-circle">
+                                                        </a>
+                                                    </div>
+                                                    <div class="chat-body">
+                                                        <div class="chat-bubble">
+                                                            <div class="chat-content">
+                                                                <p>Typing ...</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="chat-footer">
+                                <div class="message-bar">
+                                    <div class="message-inner">
+                                        <a class="link attach-icon" href="#" data-toggle="modal"
+                                            data-target="#drag_files"><img src="assets/img/attachment.png" alt=""></a>
+                                        <div class="message-area">
+                                            <div class="input-group">
+                                                <textarea class="form-control" placeholder="Type message..."></textarea>
+                                                <span class="input-group-append">
+                                                    <button class="btn btn-primary" type="button"><i
+                                                            class="fa fa-send"></i></button>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sidebar-overlay" data-reff=""></div>
+    <script src="{% static 'assets/js/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.slimscroll.js' %}"></script>
+    <script src="{% static 'assets/js/app.js' %}"></script>
