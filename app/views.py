@@ -47,7 +47,7 @@ def getMessages(request, room):
     return JsonResponse({"messages":list(messages.values())})
 
 
-def Room1(request):
+def Room1(request, room1):
     username = request.GET.get('username')
     room_details = Room.objects.get(name=room)
     context = {'username':username, 'room':room, 'room_details':room_details}
