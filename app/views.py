@@ -14,11 +14,17 @@ def Logout(request):
         return redirect('/')
     return render(request, 'app/home.html')
 
-def RooM(request, room):
+# def RooM(request, room):
+#     username = request.GET.get('username')
+#     room_details = Room.objects.get(name=room)
+#     context = {'username':username, 'room':room, 'room_details':room_details}
+#     return render(request, 'app/room.html', context)
+
+def Room1(request, room):
     username = request.GET.get('username')
     room_details = Room.objects.get(name=room)
     context = {'username':username, 'room':room, 'room_details':room_details}
-    return render(request, 'app/room.html', context)
+    return render(request, 'app/room1.html', context)
 
 def Checkview(request):
     room = request.POST['room_name']
@@ -45,10 +51,3 @@ def getMessages(request, room):
     
     messages = Messange.objects.filter(room=room_details.id)
     return JsonResponse({"messages":list(messages.values())})
-
-
-def Room1(request, room1):
-    username = request.GET.get('username')
-    room_details = Room.objects.get(name=room)
-    context = {'username':username, 'room':room, 'room_details':room_details}
-    return render(request, 'app/room1.html', context)
