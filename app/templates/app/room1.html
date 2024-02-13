@@ -63,81 +63,90 @@
                                                 {% endfor %}
                                                 <script>
                                                     $(document).ready(function () {
-                                                        setInterval(function () {
-                                                            $.ajax({
-                                                                type: 'GET',
-                                                                url: "/getMessages/{{room}}/",
-                                                                success: function (response) {
-                                                                    $("#display").empty();
-                                                                    for (var key in response.messages.reverse()) {
-                                                                        var user = response.messages[key].user;
-                                                                        var message = response.messages[key].value;
-                                                                        var date = response.messages[key].date;
+                                                        // setInterval(function () {
+                                                        $.ajax({
+                                                            type: 'GET',
+                                                            url: "/getMessages/{{room}}/",
+                                                            success: function (response) {
+                                                                $("#display").empty();
+                                                                for (var key in response.messages.reverse()) {
+                                                                    var user = response.messages[key].user;
+                                                                    var message = response.messages[key].value;
+                                                                    var date = response.messages[key].date;
 
-                                                                        var temp = "<div class='chat chat-right'>" +
-                                                                            "<div class='chat-body'>" +
-                                                                            "<div class='chat-bubble'>" +
-                                                                            "<div class='chat-content'>" +
-                                                                            "<ul class='attach-list'>" +
-                                                                            "<li class='pdf-file'>" +
-                                                                            "<i class='fa fa-file-pdf-o'></i>" +
-                                                                            "<a href='#'>"+ message +"</a></li>" +
-                                                                            "</ul>" +
-                                                                            "<span class='chat-time'>"+ date +"</span>" +
-                                                                            "</div>" +
-                                                                            "</div>" +
-                                                                            "</div>" ;
-                                                                            $("#display").append(temp);
-                                                                    }
-                                                                },
-                                                                error: function (response) {
-                                                                    alert('An error occurred');
+                                                                    var temp = "<div class='chat chat-right'>" +
+                                                                        "<div class='chat-body'>" +
+                                                                        "<div class='chat-bubble'>" +
+                                                                        "<div class='chat-content'>" +
+                                                                        "<ul class='attach-list'>" +
+                                                                        "<li class='pdf-file'>" +
+                                                                        "<i class='fa fa-file-pdf-o'></i>" +
+                                                                        "<a href='#'>" + message + "</a></li>" +
+                                                                        "</ul>" +
+                                                                        "<span class='chat-time'>" + date + "</span>" +
+                                                                        "</div>" +
+                                                                        "</div>" +
+                                                                        "</div>";
+                                                                    $("#display").append(temp);
                                                                 }
-                                                            });
-                                                        },1000);
-                                                    })
+                                                            },
+                                                            error: function (response) {
+                                                                alert('An error occurred');
+                                                            }
+                                                        });
+                                                    },
+                                                        // 1000);}
+                                                    )
                                                 </script>
-                                                <div class="chat chat-left" id="display1">
+                                                <div id="display">
+                                                    {% for data in all_messanges %}
+                                                    {% if username != data.user %}
+                                                    <div class="chat chat-right">
+                                                        <!-- Your chat content here -->
+                                                    </div>
+                                                    {% endif %}
+                                                    {% endfor %}
                                                 </div>
                                                 <script>
                                                     $(document).ready(function () {
-                                                        setInterval(function () {
-                                                            $.ajax({
-                                                                type: 'GET',
-                                                                url: "/getMessages/{{room}}/",
-                                                                success: function (response) {
-                                                                    $("#display1").empty();
-                                                                    for (var key in response.messages.reverse()) {
-                                                                        var user = response.messages[key].user;
-                                                                        var message = response.messages[key].value;
-                                                                        var date = response.messages[key].date;
+                                                        // setInterval(function () {
+                                                        $.ajax({
+                                                            type: 'GET',
+                                                            url: "/getMessages/{{room}}/",
+                                                            success: function (response) {
+                                                                $("#display1").empty();
+                                                                for (var key in response.messages.reverse()) {
+                                                                    var user = response.messages[key].user;
+                                                                    var message = response.messages[key].value;
+                                                                    var date = response.messages[key].date;
 
-                                                                        var temp = "<div class='chat chat-left'>" +
-                                                                            "<div class='chat-avatar'>" +
-                                                                            "<a href='profile.html' class='avatar'>" +
-                                                                            "<img alt='" + user + "' src='assets/img/patient-thumb-02.jpg' class='img-fluid rounded-circle'>" +
-                                                                            "</a>" +
-                                                                            "</div>" +
-                                                                            "<div class='chat-body'>" +
-                                                                            "<div class='chat-bubble'>" +
-                                                                            "<div class='chat-content'>" +
-                                                                            "<a href='#'>" + user + "</a>" +
-                                                                            "<p>" + message + "</p>" +
-                                                                            "<span class='chat-time'>" + date + "</span>" +
-                                                                            "</div>" +
-                                                                            "</div>" +
-                                                                            "</div>" +
-                                                                            "</div>";
+                                                                    var temp = "<div class='chat chat-left'>" +
+                                                                        "<div class='chat-avatar'>" +
+                                                                        "<a href='profile.html' class='avatar'>" +
+                                                                        "<img alt='" + user + "' src='assets/img/patient-thumb-02.jpg' class='img-fluid rounded-circle'>" +
+                                                                        "</a>" +
+                                                                        "</div>" +
+                                                                        "<div class='chat-body'>" +
+                                                                        "<div class='chat-bubble'>" +
+                                                                        "<div class='chat-content'>" +
+                                                                        "<a href='#'>" + user + "</a>" +
+                                                                        "<p>" + message + "</p>" +
+                                                                        "<span class='chat-time'>" + date + "</span>" +
+                                                                        "</div>" +
+                                                                        "</div>" +
+                                                                        "</div>" +
+                                                                        "</div>";
 
-                                                                        $("#display").append(temp);
-                                                                    }
-                                                                },
-                                                                error: function (response) {
-                                                                    alert('An error occurred');
+                                                                    $("#display").append(temp);
                                                                 }
-                                                            });
-                                                        }, 1000);
-                                                    })
+                                                            },
+                                                            error: function (response) {
+                                                                alert('An error occurred');
+                                                            }
+                                                        });
+                                                    },
+                                                        // 1000);}
+                                                    )
                                                 </script>
                                             </div>
                                         </div>
