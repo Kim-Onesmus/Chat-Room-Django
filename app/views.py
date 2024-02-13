@@ -23,7 +23,8 @@ def Logout(request):
 def Room1(request, room):
     username = request.GET.get('username')
     room_details = Room.objects.get(name=room)
-    context = {'username':username, 'room':room, 'room_details':room_details}
+    all_messanges = Messange.objects.all
+    context = {'username':username, 'room':room, 'room_details':room_details, 'all_messanges':all_messanges}
     return render(request, 'app/room1.html', context)
 
 def Checkview(request):

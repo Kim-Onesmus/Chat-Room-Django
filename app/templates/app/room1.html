@@ -55,8 +55,12 @@
                                     <div class="chat-wrap-inner">
                                         <div class="chat-box">
                                             <div class="chats">
-                                                <div class="chat chat-left" id="display">
+                                                {% for data in all_messanges %}
+                                                {% if username == data.user %}
+                                                <div class="chat chat-right" id="display">
                                                 </div>
+                                                {% endif %}
+                                                {% endfor %}
                                                 <script>
                                                     $(document).ready(function () {
                                                         setInterval(function () {
